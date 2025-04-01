@@ -2,16 +2,15 @@
 using Microsoft.Data.Sqlite;
 using ScreenSound.Modelos;
 
-namespace ScreenSound.Banco
+namespace ScreenSound.Banco;
+internal class Connection
 {
-    internal class Connection
-    {
-        private string connectionString = $"Data Source=base.db";
+    private string connectionString = $"Data Source=base.db";
 
-        public SqliteConnection ObterConexao()
-        {
-            return new SqliteConnection(connectionString);
-        }
-        
+    public SqliteConnection ObterConexao()
+    {
+        return new SqliteConnection(connectionString);
     }
+    
 }
+
