@@ -7,16 +7,13 @@ try
     var artistaDAL = new ArtistaDAL();
     // artistaDAL.Adicionar(new Artista("Foo Fighters", "Foo Fighters é uma banda de rock alternativo americana formada por Dave Grohl em 1995."));
 
-    Artista? artista = artistaDAL.ObterPorId(3);
+    var artistas = artistaDAL.Listar();
 
-    if (artista is not null)
+    foreach (var artista in artistas)
     {
-        artista.Nome = "Queen";
-
-        artistaDAL.Atualizar(artista);
+        Console.WriteLine(artista);
     }
-
-    // artistaDAL.Deletar(2);
+    
 }
 catch (Exception ex)
 {
